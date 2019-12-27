@@ -1,0 +1,21 @@
+<h1>Listing cars</h1>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+ 
+  <% @cars.each do |car| %>
+    <tr>
+      <td><%= car.name %></td>
+      <td><%= link_to 'Show', pooja_ki_car_path(car) %></td>
+      <td><%= link_to 'Edit', edit_car_path(car) %></td>
+      <td><%= link_to 'Destroy', destory_car_path(car),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'New car', cars_new_path %>
+
+
